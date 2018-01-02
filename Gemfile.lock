@@ -76,6 +76,8 @@ GEM
     debug_inspector (0.0.3)
     erubi (1.7.0)
     execjs (2.7.0)
+    faker (1.8.7)
+      i18n (>= 0.7)
     ffi (1.9.18)
     globalid (0.4.1)
       activesupport (>= 4.2.0)
@@ -102,7 +104,7 @@ GEM
     mini_portile2 (2.3.0)
     minitest (5.10.3)
     multi_json (1.12.2)
-    nio4r (2.1.0)
+    nio4r (2.2.0)
     nokogiri (1.8.1)
       mini_portile2 (~> 2.3.0)
     pg (0.21.0)
@@ -176,7 +178,7 @@ GEM
     tilt (2.0.8)
     tzinfo (1.2.4)
       thread_safe (~> 0.1)
-    uglifier (4.0.2)
+    uglifier (4.1.2)
       execjs (>= 0.3.0, < 3)
     web-console (3.5.1)
       actionview (>= 5.0)
@@ -200,6 +202,7 @@ DEPENDENCIES
   byebug
   capybara (~> 2.13)
   coffee-rails (~> 4.2)
+  faker
   jbuilder (~> 2.5)
   jquery-rails
   listen (>= 3.0.5, < 3.2)
