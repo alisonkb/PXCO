@@ -11,7 +11,7 @@ class ApplicationController < ActionController::Base
 
   def sign_out
     current_user.reset_session_token
-    session[session_token] = nil
+    session[:session_token] = nil
     @current_user = nil
   end
 
@@ -20,7 +20,7 @@ class ApplicationController < ActionController::Base
   end
 
   def current_user
-    @current_user
+    @current_user ||= User.find_by(session_token: session[:session_token])
   end
 
   def require_sign_in
