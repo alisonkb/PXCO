@@ -3,8 +3,12 @@ import GreetingContainer from './greeting/greeting_container';
 
 const App = () => (
   <div>
-    <h1>PXCO</h1>
-    <GreetingContainer />
+    <header>
+      <h1>PXCO</h1>
+      <GreetingContainer />
+    </header>
+
+
   </div>
 );
 
