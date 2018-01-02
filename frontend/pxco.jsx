@@ -3,5 +3,5 @@ import ReactDOM from 'react-dom';
 
 document.addEventListener('DOMContentLoaded', () => {
   const root = document.getElementById('root');
-  ReactDOM.render(<h1>Welcome to PXCO 2!</h1>, root);
+  ReactDOM.render(<h1>Welcome to PXCO!</h1>, root);
 });
