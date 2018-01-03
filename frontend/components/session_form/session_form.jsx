@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
+import Typed from 'typed.js';
 
 
 class SessionForm extends React.Component {
@@ -11,6 +12,7 @@ class SessionForm extends React.Component {
       password: ""
     };
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.demo = this.demo.bind(this);
   }
 
   componentWillReceiveProps(nextProps) {
@@ -43,6 +45,33 @@ class SessionForm extends React.Component {
     );
   }
 
+  demo (e) {
+    this.setState({username: '', password: ''});
+    const guest = { username: 'demo-user', password: 'password' };
+    const username = {
+    strings: [guest.username],
+    typeSpeed: 80
+    };
+    const password = {
+      strings: [guest.password],
+      typeSpeed: 80
+    };
+
+    this.setState({
+      typeUsername: setTimeout(() => {
+        new Typed('.login-input-u', username);
+      }, 50),
+      typePassword: setTimeout(() => {
+        new Typed('.login-input-p', password);
+      }, 800),
+      typeSubmit: setTimeout(() => {
+        this.props.login(guest);
+      }, 1700)
+    });
+
+  }
+
+
   render() {
 
     return (
@@ -61,7 +90,7 @@ class SessionForm extends React.Component {
                 placeholder='Username'
                 value={this.state.username}
                 onChange={this.update('username')}
-                className="login-input"
+                className="login-input-u"
               />
             </label>
             <br/>
@@ -70,7 +99,7 @@ class SessionForm extends React.Component {
                 placeholder='Password'
                 value={this.state.password}
                 onChange={this.update('password')}
-                className="login-input"
+                className="login-input-p"
               />
             </label>
             <br/>
@@ -79,6 +108,8 @@ class SessionForm extends React.Component {
             </div>
           </div>
         </form>
+        <br/>
+        <button type='button' onClick={this.demo} className='demo-button'>Demo LogIn</button>
 
       </div>
 

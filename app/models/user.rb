@@ -6,6 +6,8 @@ class User < ApplicationRecord
 
   after_initialize :ensure_session_token
 
+  has_many :images
+
   attr_reader :password
 
   def self.find_by_credentials(username, password)

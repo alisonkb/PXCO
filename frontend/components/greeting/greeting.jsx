@@ -20,7 +20,7 @@ const userGreeting = (currentUser, logout) => (
   <div className='greeting-links'>
       <Link to='/'><h1> PXCO </h1></Link>
     <div className="right-side">
-      <button onClick={logout}>Log Out</button>
+      <button className='logout-button' onClick={logout}>Log Out</button>
     </div>
   </div>
 );

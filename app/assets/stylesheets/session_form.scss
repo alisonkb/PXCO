@@ -1,11 +1,11 @@
 .login-form-big {
-  display: flex;
+  // display: flex;
   font-family: helvetica;
   font-weight: normal;
   color: dark-gray;
   margin: auto;
   width: 250px;
-
+  font-size: 14px;
   text-align: center;
   justify-content: center;
 }
@@ -21,7 +21,7 @@
 input[type=text],[type=password] {
     border: none;
     border-bottom: 1px solid grey;
-    font-size: 16px;
+    font-size: 14px;
     font-weight: lighter;
     width: 100%;
     padding-top: 20px;
@@ -35,9 +35,22 @@ input[type=text],[type=password] {
 }
 
 input[type=submit] {
-  background-color: #909090;
+  background-color: #c8c8c8;
   border: none;
   color: dark-gray;
-  padding: 10px;
+  padding: 14px 39px 14px 39px;
+  font-size: 14px;
 
+
+}
+
+.demo-button {
+
+  background-color: #c8c8c8;
+  border: none;
+  color: dark-gray;
+  padding: 14px 22px 14px 22px;
+  font-size: 14px;
+  display: flex;
+  float: right;
 }

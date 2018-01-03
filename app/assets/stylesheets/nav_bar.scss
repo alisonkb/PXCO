@@ -8,6 +8,7 @@
   padding-left: 40px;
   padding-right: 40px;
   padding-top: 32px;
+  font-size: 14px;
 }
 
 .signup {
@@ -16,4 +17,19 @@
 
 .greeting-links a:hover {
   color: gray;
+}
+
+.logout-button {
+  background-color: white;
+  border: none;
+  font-family: helvetica;
+  font-weight: normal;
+  color: dark-gray;
+  font-size: 14px;
+  padding:none
+}
+
+.logout-button:hover {
+    color: gray;
+    cursor: pointer;
 }
