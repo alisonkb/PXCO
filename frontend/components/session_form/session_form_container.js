@@ -5,6 +5,7 @@ import SessionForm from './session_form';
 
 
 const mapStateToProps = (state, ownProps) => {
+  
   return {
     loggedIn: Boolean(state.session.currentUser),
     errors: state.errors.session,
@@ -13,9 +14,10 @@ const mapStateToProps = (state, ownProps) => {
 };
 
 const mapDispatchToProps = (dispatch, ownProps) => {
-  if (ownProps.location.pathname === 'login') {
+  if (ownProps.location.pathname === '/login') {
     return {
       processForm: user => dispatch(login(user))
+
     };
   } else {
     return {
