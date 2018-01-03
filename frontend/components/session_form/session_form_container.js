@@ -21,7 +21,8 @@ const mapDispatchToProps = (dispatch, ownProps) => {
     };
   } else {
     return {
-      processForm: user => dispatch(signup(user))
+      processForm: user => dispatch(signup(user)),
+      login: user => dispatch(login(user))
     };
   }
 };

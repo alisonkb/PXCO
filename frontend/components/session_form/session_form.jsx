@@ -9,7 +9,10 @@ class SessionForm extends React.Component {
     super(props);
     this.state = {
       username: "",
-      password: ""
+      password: "",
+      typeUsername: null,
+      typePassword: null,
+      typeSubmit: null
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.demo = this.demo.bind(this);
@@ -50,11 +53,11 @@ class SessionForm extends React.Component {
     const guest = { username: 'demo-user', password: 'password' };
     const username = {
     strings: [guest.username],
-    typeSpeed: 80
+    typeSpeed: 100
     };
     const password = {
       strings: [guest.password],
-      typeSpeed: 80
+      typeSpeed: 100
     };
 
     this.setState({
@@ -65,7 +68,11 @@ class SessionForm extends React.Component {
         new Typed('.login-input-p', password);
       }, 800),
       typeSubmit: setTimeout(() => {
-        this.props.login(guest);
+        if (this.props.formType === 'Log in') {
+        this.props.processForm(guest) ;
+      } else {
+          this.props.login(guest) ;
+        }
       }, 1700)
     });
 
