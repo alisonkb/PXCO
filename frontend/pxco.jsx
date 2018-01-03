@@ -19,6 +19,5 @@ document.addEventListener('DOMContentLoaded', () => {
   window.getState = store.getState;
   window.dispatch = store.dispatch;
   window.login = login;
-  console.log(window)
-  console.log(window.currentUser);
+
 });
