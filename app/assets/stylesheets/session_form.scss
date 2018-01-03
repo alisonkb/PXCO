@@ -1,0 +1,43 @@
+.login-form-big {
+  display: flex;
+  font-family: helvetica;
+  font-weight: normal;
+  color: dark-gray;
+  margin: auto;
+  width: 250px;
+
+  text-align: center;
+  justify-content: center;
+}
+
+.login-form {
+  padding-top: 30px;
+}
+
+.login-logo-image {
+  background: url(/assets/images('pxco.png'));
+}
+
+input[type=text],[type=password] {
+    border: none;
+    border-bottom: 1px solid grey;
+    font-size: 16px;
+    font-weight: lighter;
+    width: 100%;
+    padding-top: 20px;
+    padding-bottom: 10px;
+}
+
+.submit-button {
+  padding-top: 30px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+input[type=submit] {
+  background-color: #909090;
+  border: none;
+  color: dark-gray;
+  padding: 10px;
+
+}

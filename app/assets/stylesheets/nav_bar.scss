@@ -1,15 +1,19 @@
 .greeting-links {
   font-family: helvetica;
   font-weight: normal;
-  color: gray;
+  color: dark-gray;
   display: flex;
   justify-content: space-between;
-  height: 80px;
-  padding-left: 50px;
-  padding-right: 50px;
-  padding-top: 45px;
+  height: 65px;
+  padding-left: 40px;
+  padding-right: 40px;
+  padding-top: 32px;
 }
 
 .signup {
   padding-left: 20px;
+}
+
+.greeting-links a:hover {
+  color: gray;
 }

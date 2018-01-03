@@ -47,30 +47,36 @@ class SessionForm extends React.Component {
 
     return (
       <div className='login-form-big'>
-        <Link to='/'><h1> PXCO </h1></Link>
         <form onSubmit={this.handleSubmit} className="login-form-box">
+          <section className='login-logo-image'></section>
+        <img src ="https://assets.vsco.co/assets/images/favicon-152.png"/>
+          <h1> {this.props.formType} to share and discover images. </h1>
 
-          {this.props.formType}
+
           {this.renderErrors()}
           <div className="login-form">
             <br/>
-            <label>Username:
+            <label>
               <input type="text"
+                placeholder='Username'
                 value={this.state.username}
                 onChange={this.update('username')}
                 className="login-input"
               />
             </label>
             <br/>
-            <label>Password:
+            <label>
               <input type="password"
+                placeholder='Password'
                 value={this.state.password}
                 onChange={this.update('password')}
                 className="login-input"
               />
             </label>
             <br/>
-            <input type="submit" value="Submit" />
+            <div className='submit-button'>
+              <input className='submit' type="submit" value="Submit" />
+            </div>
           </div>
         </form>
 
