@@ -3,19 +3,25 @@ import { Link } from 'react-router-dom';
 
 
 const strangerGreeting = () => (
-  <div className='stranger-greeting-links'>
-      <h1> PXCO </h1>
-    <Link to='/login'>Log In</Link>
-    <Link to='/signup'>Sign Up</Link>
+  <div className='greeting-links'>
+
+      <Link to='/'><h1> PXCO </h1></Link>
+    <div className="right-side">
+
+      <Link to='/login'>Log In</Link>
+    <Link className="signup" to='/signup'>Sign Up</Link>
+    </div>
 
 
   </div>
 );
 
 const userGreeting = (currentUser, logout) => (
-  <div className='user-greeting-links'>
-    <h1> PXCO </h1>
-    <button onClick={logout}>Log Out</button>
+  <div className='greeting-links'>
+      <Link to='/'><h1> PXCO </h1></Link>
+    <div className="right-side">
+      <button onClick={logout}>Log Out</button>
+    </div>
   </div>
 );
 

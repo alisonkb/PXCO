@@ -18,4 +18,10 @@
 
  // CORE
  @import "base/colors.scss";
- @import "base/fonts.scss";
+
+
+.login-form-box {
+  font-family: helvetica;
+  font-weight: normal;
+  color: gray;
+}

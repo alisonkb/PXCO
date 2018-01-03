@@ -46,8 +46,8 @@ class SessionForm extends React.Component {
   render() {
 
     return (
-      <div className='login-form'>
-              <h1> PXCO </h1>
+      <div className='login-form-big'>
+        <Link to='/'><h1> PXCO </h1></Link>
         <form onSubmit={this.handleSubmit} className="login-form-box">
 
           {this.props.formType}
