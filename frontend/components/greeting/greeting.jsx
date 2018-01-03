@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 
 const strangerGreeting = () => (
   <div className='stranger-greeting-links'>
+      <h1> PXCO </h1>
     <Link to='/login'>Log In</Link>
     <Link to='/signup'>Sign Up</Link>
 
@@ -13,6 +14,7 @@ const strangerGreeting = () => (
 
 const userGreeting = (currentUser, logout) => (
   <div className='user-greeting-links'>
+    <h1> PXCO </h1>
     <button onClick={logout}>Log Out</button>
   </div>
 );
