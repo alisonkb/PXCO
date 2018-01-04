@@ -1,4 +1,4 @@
-class User < ApplicationRecord
+ class User < ApplicationRecord
 
   validates :password_digest, presence: true
   validates :username, presence: true, uniqueness: true
@@ -7,6 +7,9 @@ class User < ApplicationRecord
   after_initialize :ensure_session_token
 
   has_many :images
+
+  has_attached_file :image, default_url: "unhover.jpg"
+  validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
 
   attr_reader :password
 
