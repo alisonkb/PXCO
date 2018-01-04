@@ -5,13 +5,13 @@ const Footer = () => {
     <div className='Footer-Section'>
       <ul>
         <li>
-          Created by Alison Bushor, NYC. 
+          Created by Alison Bushor, NYC.
         </li>
         <li>
-          GitHub
+          <a href ="https://github.com/alisonkb">GitHub</a>
         </li>
         <li>
-          LinkedIn
+          <a href ="https://www.linkedin.com/in/alison-bushor-48977165/">LinkedIn</a>
         </li>
       </ul>
 

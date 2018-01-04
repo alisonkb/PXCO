@@ -8,10 +8,12 @@
   font-size: 14px;
   text-align: center;
   justify-content: center;
+  height: calc(100vh - 5.25rem)
 }
 
 .login-form {
   padding-top: 30px;
+  height: 80%;
 }
 
 .login-logo-image {

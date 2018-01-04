@@ -1,4 +1,18 @@
 .Footer-Section {
-  height: 200px;
+  height: 160px;
   background-color: black;
+  color: white;
+  font-family: helvetica;
+  font-weight: normal;
+  font-size: 14px;
+  text-align: center;
+  
+}
+
+.Footer-Section ul {
+  padding-top: 25px;
+}
+
+.Footer-Section li {
+  padding: 10px;
 }
