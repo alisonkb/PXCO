@@ -14,7 +14,7 @@ const App = () => (
 
       <AuthRoute path="/login" component={SessionFormContainer} />
       <AuthRoute path="/signup" component={SessionFormContainer} />
-      <AuthRoute path='/' component={MainPage} />
+    <ProtectedRoute path='/' component={MainPage} />
 
   </Switch>
   </div>

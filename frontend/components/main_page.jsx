@@ -7,14 +7,16 @@ const MainPage = () => {
 
     <section className='HomePage'>
       <div className='SectionOne'>
-        <img src="https://imageproxy.viewbook.com/df5200d2a63f7a5bb315578d413e2b2c_hd.jpg"/>
+        <div className='hoverSOne'></div>
+          
       </div>
     <section className='HomeLeft'>
         <div className='SectionTwo'>
-          <img src="http://s3.amazonaws.com/pxco-dev/users/images/000/000/021/original/hover.jpg?1515079082"/>
+          <img src="https://s3.amazonaws.com/pxco-dev/users/images/000/000/021/original/plushover.png"/>
+
         </div>
         <div className='SectionThree'>
-          <img src ="https://imageproxy.viewbook.com/85180/e08b3a3ceb9356b74dc6c6d5a35359e2_hd.jpg"/>
+
         </div>
       </section>
 

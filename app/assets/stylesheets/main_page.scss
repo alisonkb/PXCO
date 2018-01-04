@@ -6,15 +6,37 @@
 }
 
 .SectionOne {
-  background-color: gray;
+  background-image: url("https://s3.amazonaws.com/pxco-dev/users/images/000/000/021/original/ana1.png");
+  background-size: cover;
+  object-fit: cover;
   width: 50%;
   height: 100%;
-    overflow: hidden;
+  overflow: hidden;
 }
 
-.SectionOne img {
+.hoverSOne {
+  background-image: url("https://s3.amazonaws.com/pxco-dev/users/images/000/000/021/original/anahover2.png");
+  background-size: cover;
+  object-fit: cover;
+  width: 50%;
+  height: 100%;
+  overflow: hidden;
   width: 100%;
+  opacity: 0;
 }
+.hoverSOne:hover {
+  background-image: url("https://s3.amazonaws.com/pxco-dev/users/images/000/000/021/original/anahover2.png");
+  background-size: cover;
+  object-fit: cover;
+  width: 50%;
+  height: 100%;
+  overflow: hidden;
+  width: 100%;
+  opacity: 1;
+}
+
+
+
 
 .HomeLeft {
     height: calc(100vh - 5.25rem);
@@ -22,7 +44,10 @@
 }
 
 .SectionTwo {
-  background-color: black;
+  background-image: url("https://s3.amazonaws.com/pxco-dev/users/images/000/000/021/original/gym1.jpg");
+  background-size: 100%;
+  object-fit: cover;
+  background-position: center;
   overflow: hidden;
   top: 0%;
   left: 50%;
@@ -36,12 +61,21 @@
 
 .SectionTwo img {
   width: 100%;
-
-  
+  opacity: 0;
 }
 
+.SectionTwo img:hover {
+  width: 100%;
+  opacity: 1;
+}
+
+
+
 .SectionThree {
-  background-color: dark-gray;
+  background-image: url('https://imageproxy.viewbook.com/85180/e08b3a3ceb9356b74dc6c6d5a35359e2_hd.jpg');
+  object-fit: cover;
+  background-size: 100%;
+  background-position: center;
   top: 50%;
   left: 50%;
   height: 50%;
