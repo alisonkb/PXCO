@@ -72,17 +72,38 @@
 
 
 .SectionThree {
-  background-image: url('https://imageproxy.viewbook.com/85180/e08b3a3ceb9356b74dc6c6d5a35359e2_hd.jpg');
+  background-image: url('https://s3.amazonaws.com/pxco-dev/users/images/000/000/021/original/lines-artist.png');
+  background-size: cover;
   object-fit: cover;
   background-size: 100%;
   background-position: center;
   top: 50%;
   left: 50%;
   height: 50%;
-    overflow: hidden;
+  overflow: hidden;
 }
 
-.SectionThree img {
-  width: 100%;
-  vertical-align: middle;
+.hoverSThree {
+  background-image: url("https://s3.amazonaws.com/pxco-dev/users/images/000/000/021/original/lines-hover.png");
+  background-size: cover;
+  object-fit: cover;
+  background-size: 100%;
+  background-position: center;
+  top: 50%;
+  left: 50%;
+  height: 50%;
+  overflow: hidden;
+  opacity: 0;
+}
+.hoverSThree:hover {
+  background-image: url("https://s3.amazonaws.com/pxco-dev/users/images/000/000/021/original/lines-hover.png");
+  background-size: cover;
+  object-fit: cover;
+  background-size: 100%;
+  background-position: center;
+  top: 50%;
+  left: 50%;
+  height: 100%;
+  overflow: hidden;
+  opacity: 1;
 }
