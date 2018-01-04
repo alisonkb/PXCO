@@ -1,0 +1,54 @@
+.HomePage {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  height: calc(100vh - 5.25rem)
+}
+
+.SectionOne {
+  background-color: gray;
+  width: 50%;
+  height: 100%;
+    overflow: hidden;
+}
+
+.SectionOne img {
+  width: 100%;
+}
+
+.HomeLeft {
+    height: calc(100vh - 5.25rem);
+    width: 50%;
+}
+
+.SectionTwo {
+  background-color: black;
+  overflow: hidden;
+  top: 0%;
+  left: 50%;
+  height: 50%;
+  width: 100%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+}
+
+.SectionTwo img {
+  width: 100%;
+
+  
+}
+
+.SectionThree {
+  background-color: dark-gray;
+  top: 50%;
+  left: 50%;
+  height: 50%;
+    overflow: hidden;
+}
+
+.SectionThree img {
+  width: 100%;
+  vertical-align: middle;
+}
