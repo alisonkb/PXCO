@@ -10,7 +10,7 @@ import PostsIndex from './posts/posts_index_container';
 const App = () => (
   <div>
     <GreetingContainer />
-  <PostsIndex />
+  {/* <PostsIndex /> */}
     <Switch>
 
 
