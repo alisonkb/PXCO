@@ -6,11 +6,12 @@ import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import  MainPage from './main_page';
 import Footer from './footer';
 import PostsIndex from './posts/posts_index_container';
+import PostForm from './post_form/post_form_container';
 
 const App = () => (
   <div>
     <GreetingContainer />
-  {/* <PostsIndex /> */}
+
     <Switch>
 
 
@@ -18,6 +19,7 @@ const App = () => (
       <AuthRoute path="/login" component={SessionFormContainer} />
       <AuthRoute path="/signup" component={SessionFormContainer} />
       <Route path='/feed' component={PostsIndex} />
+    <Route path='/upload' component={PostForm} />
       <Route path='/' component={MainPage} />
       {/* <Route path='/users/:id' component={UserProfileContainer} /> */}
   </Switch>
