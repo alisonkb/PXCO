@@ -3,9 +3,9 @@ import React from 'react';
 class PostsIndexItem extends React.Component {
   render () {
     return (
-      <li>
+      <li className='SinglePost'>
         <img src={this.props.post.imageUrl}/>
-        <p>{this.props.post.caption}</p>
+      {/* <p>{this.props.user.username}</p> */}
       </li>
     );
   }

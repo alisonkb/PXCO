@@ -26,10 +26,21 @@
   font-weight: normal;
   color: dark-gray;
   font-size: 14px;
-  padding:none
+  padding-top: 0px !important;
+  padding-left: 20px;
 }
 
 .logout-button:hover {
     color: gray;
     cursor: pointer;
+}
+
+.right-side-in {
+  display: flex;
+  align-items: flex-start;
+
+}
+
+.username-link {
+  padding-top: 2px;
 }

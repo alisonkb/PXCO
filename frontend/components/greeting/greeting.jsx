@@ -9,7 +9,7 @@ const strangerGreeting = () => (
     <div className="right-side">
 
       <Link to='/login'>Log In</Link>
-    <Link className="signup" to='/signup'>Sign Up</Link>
+      <Link className="signup" to='/signup'>Sign Up</Link>
     </div>
 
 
@@ -19,7 +19,8 @@ const strangerGreeting = () => (
 const userGreeting = (currentUser, logout) => (
   <div className='greeting-links'>
       <Link to='/'><h1> PXCO </h1></Link>
-    <div className="right-side">
+    <div className="right-side-in">
+      <Link className='username-link' to='/'><h1> {currentUser.username} </h1></Link>
       <button className='logout-button' onClick={logout}>Log Out</button>
     </div>
   </div>

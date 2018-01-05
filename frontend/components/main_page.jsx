@@ -7,7 +7,7 @@ const MainPage = () => {
 
     <section className='HomePage'>
       <div className='SectionOne'>
-        <a href ="/signup"><div className='hoverSOne'></div></a>
+        <a href ="/#/signup"><div className='hoverSOne'></div></a>
       </div>
 
 

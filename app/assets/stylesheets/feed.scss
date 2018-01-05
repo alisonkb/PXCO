@@ -1,0 +1,33 @@
+.AllPosts {
+  padding: 2% 4% 4% 4%;
+}
+
+.AllPosts h2{
+  font-family: helvetica;
+  font-weight: normal;
+  color: dark-gray;
+  font-size: 30px;
+  padding-left: 10%;
+  padding-bottom: 3%
+
+}
+
+
+.SinglePost {
+  width: 26%;
+  display: inline-block;
+  vertical-align: bottom;
+  padding: 3% ;
+}
+
+.SinglePost img{
+  width: 100%;
+}
+
+.SinglePost p{
+  font-family: helvetica;
+  font-weight: normal;
+  color: dark-gray;
+
+  font-size: 14px;
+}
