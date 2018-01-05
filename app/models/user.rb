@@ -1,3 +1,19 @@
+# == Schema Information
+#
+# Table name: users
+#
+#  id                 :integer          not null, primary key
+#  username           :string
+#  password_digest    :string
+#  session_token      :string
+#  created_at         :datetime         not null
+#  updated_at         :datetime         not null
+#  image_file_name    :string
+#  image_content_type :string
+#  image_file_size    :integer
+#  image_updated_at   :datetime
+#
+
  class User < ApplicationRecord
 
   validates :password_digest, presence: true
@@ -6,7 +22,7 @@
 
   after_initialize :ensure_session_token
 
-  has_many :images
+  has_many :posts
 
   has_attached_file :image, default_url: "unhover.jpg"
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/

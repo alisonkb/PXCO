@@ -7,7 +7,7 @@ const MainPage = () => {
 
     <section className='HomePage'>
       <div className='SectionOne'>
-        <div className='hoverSOne'></div>
+        <a href ="http://localhost:3000/#/signup"><div className='hoverSOne'></div></a>
       </div>
 
 
