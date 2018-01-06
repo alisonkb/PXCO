@@ -1,0 +1,67 @@
+.upload-form {
+  font-family: helvetica;
+  font-weight: normal;
+  color: dark-gray;
+  margin: auto;
+  width: 250px;
+  font-size: 14px;
+  text-align: center;
+  justify-content: center;
+  height: calc(100vh - 5.25rem);
+    padding-top: 30px;
+    overflow: hidden;
+}
+
+.upload-title {
+  display: flex;
+  padding: 60px;
+}
+
+.upload-image {
+  width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+
+
+}
+.Custom-button {
+  background-color: #c8c8c8;
+  border: none;
+  color: dark-gray;
+  font-size: 14px;
+  display: flex;
+  // float: right;
+  padding: 14px;
+  cursor: pointer;
+
+}
+
+.upload-preview {
+
+  object-fit: contain;
+  border: none;
+  padding: 15px;
+  height: 150px;
+  width: 150px;
+
+}
+
+.caption-spacing {
+  padding:15px;
+}
+
+.upload-caption {
+  padding: 14px;
+}
+
+.upload-button {
+    background-color: #c8c8c8;
+  border: none;
+  color: dark-gray;
+    font-size: 14px;
+    display: flex;
+    float: right;
+    padding: 14px;
+      cursor: pointer;
+}

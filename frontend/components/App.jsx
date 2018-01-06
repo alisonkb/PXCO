@@ -19,7 +19,7 @@ const App = () => (
       <AuthRoute path="/login" component={SessionFormContainer} />
       <AuthRoute path="/signup" component={SessionFormContainer} />
       <Route path='/feed' component={PostsIndex} />
-    <Route path='/upload' component={PostForm} />
+      <ProtectedRoute path='/upload' component={PostForm} />
       <Route path='/' component={MainPage} />
       {/* <Route path='/users/:id' component={UserProfileContainer} /> */}
   </Switch>

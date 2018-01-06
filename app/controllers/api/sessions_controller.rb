@@ -20,6 +20,7 @@ class Api::SessionsController < ApplicationController
     if @user
       sign_out
       render "api/users/show"
+      # redirect_to root_path
     else
       render json: ["Not Signed In"], status: 404
     end

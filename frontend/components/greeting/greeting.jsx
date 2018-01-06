@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { Route, Redirect } from 'react-router'
 
 
 const strangerGreeting = () => (
@@ -16,12 +17,15 @@ const strangerGreeting = () => (
   </div>
 );
 
+
+
 const userGreeting = (currentUser, logout) => (
   <div className='greeting-links'>
       <Link to='/'><h1> PXCO </h1></Link>
     <div className="right-side-in">
       <Link className='username-link' to='/'><h1> {currentUser.username} </h1></Link>
-      <button className='logout-button' onClick={logout}>Log Out</button>
+    <Link className='username-link' to="/upload"><h1>Upload</h1></Link>
+  <button className='logout-button' onClick={logout}><a href='/'>Log Out</a></button>
     </div>
   </div>
 );

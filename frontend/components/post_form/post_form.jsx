@@ -49,19 +49,30 @@ class PostForm extends React.Component{
     ApiUtil.createPost(formData).then(() => this.props.history.push('/feed'));
   }
 
-  goToProfile() {
-    this.props.history.posh('/#/feed');
-  }
+
 
   render() {
+    let image_render;
+    if (this.state.imageUrl) {
+      image_render = <img className="upload-preview" src={this.state.imageUrl || null}/>;
+    } else {
+      image_render = <div className="upload-preview"></div>;
+    }
 
     return (
       <div>
-        <form onSubmit={this.handleSubmit}>
-          <input type="text" onChange={this.updateCaption}/>
-          <input type="file" onChange={this.updateFile}/>
-        <img src={this.state.imageUrl}/>
-        <button onClick={this.handleSubmit}>Upload</button>
+        <form className="upload-form" onSubmit={this.handleSubmit}>
+          <label className='upload-title'>Upload an image</label><br/>
+
+        <input className="upload-image" id='upload-image' type="file" onChange={this.updateFile}/><br/>
+      <label className='Custom-button' htmlFor='upload-image'>Choose a file</label>
+
+    {image_render}<br/>
+      <div className='caption-spacing'>
+          <input className="upload-caption" placeholder='Caption' type="text" onChange={this.updateCaption}/><br/>
+      </div>
+      <button className="upload-button" onClick={this.handleSubmit}>Upload</button>
+
         </form>
 
       </div>
