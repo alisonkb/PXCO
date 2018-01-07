@@ -18,7 +18,9 @@ const MainPage = () => {
             </a>
           </div>
           <div className='SectionThree'>
+            <a href='/#/users/6'>
             <div className='hoverSThree'></div>
+          </a>
           </div>
         </section>
 
