@@ -9,32 +9,34 @@ class UserProfile extends React.Component {
   }
 
 
+
+
   render () {
-    if (this.props.user) {
-      const pics = Object.entries(this.props.user.posts);
-    return (
 
-      <div>
+    let profileFeed;
+    // let numposts = this.props.userpage.posts.keys;
+    if (this.props.userpage !== undefined && this.props.userpage.posts) {
 
-      <h1 className="profile-username"> {this.props.user.username}</h1>
-      <img className="profile-username"src={this.props.user.image_url} />
-      <h2 className="profile-username"> {this.props.user.description} </h2>
-    <ul className="profile-username"> {pics.map(post => {
+      const pics = Object.entries(this.props.userpage.posts);
+      profileFeed =   <ul className="profile-feed"> {pics.map(post => {
           return (<li className='SinglePost'>
             <img src={post[1].imageUrl}/>
+            </li>);
+        })}
+      </ul>;
+    } else  {
+      profileFeed = <p className='no-post'>This user has no posts.</p>;
+    }
 
+    if (this.props.userpage !== undefined ) {
+    return (
 
-
-        </li>);
-
-
-      })}
-    </ul>
-    {console.log(Object.entries(this.props.user.posts))}
-
+      <div className="profile-page">
+        <img className="profile-avatar"src={this.props.userpage.image_url} />
+        <h1 className="profile-username"> {this.props.userpage.username}</h1>
+        <h2 className="profile-bio"> {this.props.userpage.description} </h2>
+        {profileFeed}
     </div>
-
-
     );
   } else {
     return <div></div>;

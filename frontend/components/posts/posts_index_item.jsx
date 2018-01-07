@@ -5,7 +5,9 @@ class PostsIndexItem extends React.Component {
     return (
       <li className='SinglePost'>
         <img src={this.props.post.imageUrl}/>
-      <p>{this.props.user.username}</p> 
+      <a href={`/#/users/${this.props.user.id}`}>
+      <p>{this.props.user.username}</p>
+  </a>
 
       </li>
     );

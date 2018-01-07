@@ -8,7 +8,7 @@ const mapStateToProps = (state, ownProps) => {
 
   let userId = parseInt(ownProps.location.pathname.slice(7));
   return {
-    user: state.entities.users[userId],
+    userpage: state.entities.users[userId],
     // posts: state.entities.users[userId].posts
 
   };

@@ -25,7 +25,7 @@
 
   has_many :posts
 
-  has_attached_file :image, default_url: "unhover.jpg"
+  has_attached_file :image, default_url: "logo.jpg"
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
 
   attr_reader :password
