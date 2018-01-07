@@ -25,3 +25,8 @@ const receiveUser = user => ({
   type: RECEIVE_USER,
   user
 });
+
+export const updateUser = user => dispatch => (
+  APIUserUtil.updateUser(user).then(user =>
+  dispatch(receiveUser(user)))
+);

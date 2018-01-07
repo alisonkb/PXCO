@@ -86,8 +86,9 @@ class SessionForm extends React.Component {
     return (
       <div className='login-form-big'>
         <form onSubmit={this.handleSubmit} className="login-form-box">
-          <section className='login-logo-image'></section>
-        <img src ="https://assets.vsco.co/assets/images/favicon-152.png"/>
+          <section className='login-logo-image'>
+        <img className='login-logo-image' src ="https://s3.amazonaws.com/pxco-dev/posts/pictures/000/000/018/original/sheepie.png"/>
+      </section>
           <h1> {this.props.formType} to share and discover images. </h1>
 
 

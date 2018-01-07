@@ -17,7 +17,10 @@
 }
 
 .login-logo-image {
-  background: url(/assets/images('pxco.png'));
+  // background: url(/assets/images('pxco.png'));
+  width: 250px;
+  margin: 20px;
+  opacity: .85;
 }
 
 input[type=text],[type=password] {

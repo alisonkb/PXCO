@@ -2,14 +2,14 @@ import { connect } from 'react-redux';
 
 import { fetchUser } from '../../actions/user_actions';
 
-import UserProfile from './user_profile';
+import UserEdit from './user_edit';
 
 const mapStateToProps = (state, ownProps) => {
 
   let userId = parseInt(ownProps.location.pathname.slice(7));
   return {
-    userpage: state.entities.users[userId],
-      currentUser: state.session.currentUser
+    user: state.entities.users[userId],
+    currentUser: state.session.currentUser
     // posts: state.entities.users[userId].posts
 
   };
@@ -17,10 +17,9 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = (dispatch, ownProps) => {
   return {
-
     fetchUser: user => dispatch(fetchUser(user))
   };
 };
 
 
-export default connect(mapStateToProps, mapDispatchToProps)(UserProfile);
+export default connect(mapStateToProps, mapDispatchToProps)(UserEdit);

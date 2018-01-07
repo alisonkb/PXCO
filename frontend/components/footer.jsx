@@ -3,6 +3,7 @@ import React from 'react';
 const Footer = () => {
   return (
     <div className='Footer-Section'>
+      <img src ="https://s3.amazonaws.com/pxco-dev/posts/pictures/000/000/018/sheepiewhite.png" />
       <ul>
         <li>
           Created by Alison Bushor, NYC.
