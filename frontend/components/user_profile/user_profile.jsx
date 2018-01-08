@@ -33,7 +33,7 @@ class UserProfile extends React.Component {
     if (this.props.userpage && this.props.currentUser) {
       if (this.props.currentUser.id === this.props.userpage.id){
 
-      editPage = <Link to={`/users/${this.props.currentUser.id}/edit`}>Edit Your Profile</Link>;
+      editPage = <Link className='edit-button-profile' to={`/users/${this.props.currentUser.id}/edit`}>Edit Your Profile</Link>;
       }
     } else {
       editPage = <div></div>;
