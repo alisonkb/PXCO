@@ -18,7 +18,7 @@ export const createPost = (formData) => {
 
 export const fetchPost = id => {
   return $.ajax({
-    url: '/api/posts/${id}',
+    url: `/api/posts/${id}`,
     type: 'GET'
   });
 };

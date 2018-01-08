@@ -17,14 +17,14 @@ const receiveAllPosts = ({posts, users}) => ({
 });
 
 export const fetchPost = id => dispatch => (
-  APIPostUtil.fetchPosts(id).then(post => {
+  APIPostUtil.fetchPost(id).then(post => {
     dispatch(receivePost(post));
     return post;
   })
 );
 
 export const createPost = post => dispatch => (
-  APIPostUtil.fetchPosts(post).then(post => {
+  APIPostUtil.fetchPost(post).then(post => {
     dispatch(receivePost(post));
     return post;
   })

@@ -19,6 +19,8 @@ class Post < ApplicationRecord
 
   belongs_to :user
 
+  has_many :likes
+
   has_attached_file :picture, default_url: "hover.jpg"
   validates_attachment_content_type :picture, content_type: /\Aimage\/.*\Z/
 
