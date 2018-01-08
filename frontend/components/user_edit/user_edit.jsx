@@ -51,12 +51,12 @@ class UserEdit extends React.Component {
     const formData = new FormData();
 
 
-    formData.append("user[image]", file);
+    formData.append("user[image]", file || this.props.currentUser.image_url);
     formData.append("user[username]", this.state.username);
-    formData.append("user[bio]", this.state.bio);
+    formData.append("user[description]", this.state.description );
 
 
-    this.props.updateUser(formData, this.state.id);
+    this.props.updateUser(formData, this.state.id).then(() => this.props.history.push(`/users/${this.state.id}`));
 
   }
 
@@ -77,28 +77,35 @@ class UserEdit extends React.Component {
 
     <div className='profile-update-form'>
       <form onSubmit={ this.handleSubmit }>
-        <h2>Username</h2>
+
+
       <input
+        className='update-text-input'
           value={ this.state.username }
           placeholder="Username"
           onChange={ this.update('username')}
         />
 
-        <h2>Profile Picture</h2>
-        <img className="profile-avatar"src={this.props.currentUser.image_url} />
-      <input className="upload-avatar" type="file" onChange={this.updateFile}/>
-      <img className="upload-preview" src={this.state.imageUrl || null}/>
-        <h2>Bio</h2>
+      <div className='edit-avatar'>
+
+        <img className="og-avatar"src={this.props.currentUser.image_url} />
+        <img className="new-avatar" src={this.state.imageUrl || null}/>
+        <input className="upload-image" id='upload-avatar' type="file" onChange={this.updateFile}/>
+        <label className='Custom-button' htmlFor='upload-avatar'>Choose a new file</label>
+        </div>
+
+
         <input
-            value={ this.props.currentUser.description || "" }
+            value={ this.state.description || "" }
             placeholder="Bio"
             onChange={ this.update('description')}
+            className='update-text-input'
           />
 
 
 
 
-  <button className="upload-button" onClick={this.handleSubmit}>Submit</button>
+        <button className="edit-button" onClick={this.handleSubmit}>Submit</button>
 
 
       </form>
