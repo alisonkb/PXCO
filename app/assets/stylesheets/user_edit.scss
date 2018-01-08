@@ -73,5 +73,18 @@
   margin: auto;
     cursor: pointer;
     float: right;
-margin-top: 10px;
+    margin-top: 10px;
+}
+
+.wrong {
+  padding: 100px 4% 4% 4%;
+  margin: auto;
+  text-align: center;
+  justify-content: center;
+  font-size: 14px;
+  font-family: helvetica;
+  font-weight: normal;
+  color: dark-gray;
+  width: 250px;
+    height: calc(100vh - 5.25rem);
 }

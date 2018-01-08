@@ -72,45 +72,58 @@ class UserEdit extends React.Component {
     );
   }
 
+
   render () {
-    return(
+    const badLink = <div className='wrong'>
+      <section className='login-logo-image'>
+        <img className='login-logo-image' src ="https://s3.amazonaws.com/pxco-dev/posts/pictures/000/000/018/original/sheepie.png"/>
+    </section>
+    <label>Nothing to see here.</label>
+    </div>;
 
-    <div className='profile-update-form'>
-      <form onSubmit={ this.handleSubmit }>
+  if (this.props.user && this.props.currentUser) {
+      if (this.props.user.id === this.props.currentUser.id) {
+      return (
 
-
-      <input
-        className='update-text-input'
-          value={ this.state.username }
-          placeholder="Username"
-          onChange={ this.update('username')}
-        />
-
-      <div className='edit-avatar'>
-
-        <img className="og-avatar"src={this.props.currentUser.image_url} />
-        <img className="new-avatar" src={this.state.imageUrl || null}/>
-        <input className="upload-image" id='upload-avatar' type="file" onChange={this.updateFile}/>
-        <label className='Custom-button' htmlFor='upload-avatar'>Choose a new file</label>
-        </div>
-
+      <div className='profile-update-form'>
+        <form onSubmit={ this.handleSubmit }>
 
         <input
-            value={ this.state.description || "" }
-            placeholder="Bio"
-            onChange={ this.update('description')}
-            className='update-text-input'
+          className='update-text-input'
+            value={ this.state.username }
+            placeholder="Username"
+            onChange={ this.update('username')}
           />
 
+        <div className='edit-avatar'>
+          <img className="og-avatar"src={this.props.currentUser.image_url} />
+          <img className="new-avatar" src={this.state.imageUrl || null}/>
+          <input className="upload-image" id='upload-avatar' type="file" onChange={this.updateFile}/>
+        <label className='Custom-button' htmlFor='upload-avatar'>Choose a Profile Picture</label>
+          </div>
 
 
+          <input
+              value={ this.state.description || "" }
+              placeholder="Give a Bio"
+              onChange={ this.update('description')}
+              className='update-text-input'
+            />
 
-        <button className="edit-button" onClick={this.handleSubmit}>Submit</button>
+          <button className="edit-button" onClick={this.handleSubmit}>Submit</button>
 
 
-      </form>
-    </div>
-  );
+        </form>
+      </div>
+    );
+  } else {
+    return badLink;
+  }
+  } else {
+    return badLink;
+
+
+  }
 
   }
 

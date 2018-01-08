@@ -22,7 +22,7 @@ const App = () => (
       <AuthRoute path="/signup" component={SessionFormContainer} />
       <Route path='/feed' component={PostsIndex} />
       <ProtectedRoute path='/upload' component={PostForm} />
-    <Route path='/users/:id/edit' component={UserEditContainer} />
+    <ProtectedRoute path='/users/:id/edit' component={UserEditContainer} />
       <Route path='/users/:id' component={UserProfileContainer} />
       <Route path='/' component={MainPage} />
 

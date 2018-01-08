@@ -1,5 +1,6 @@
 import React from 'react';
 import PostsIndexItem from '../posts/posts_index_item';
+import { Link } from 'react-router-dom';
 
 class UserProfile extends React.Component {
 
@@ -28,6 +29,16 @@ class UserProfile extends React.Component {
       profileFeed = <p className='no-post'>This user has no posts.</p>;
     }
 
+    let editPage;
+    if (this.props.userpage && this.props.currentUser) {
+      if (this.props.currentUser.id === this.props.userpage.id){
+
+      editPage = <Link to={`/users/${this.props.currentUser.id}/edit`}>Edit Your Profile</Link>;
+      }
+    } else {
+      editPage = <div></div>;
+    }
+
     if (this.props.userpage !== undefined ) {
     return (
 
@@ -35,7 +46,12 @@ class UserProfile extends React.Component {
         <img className="profile-avatar"src={this.props.userpage.image_url} />
         <h1 className="profile-username"> {this.props.userpage.username}</h1>
         <h2 className="profile-bio"> {this.props.userpage.description} </h2>
+      {editPage}
         {profileFeed}
+
+
+
+
     </div>
     );
   } else {
