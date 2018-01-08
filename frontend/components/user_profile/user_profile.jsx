@@ -18,7 +18,7 @@ class UserProfile extends React.Component {
     if (this.props.userpage !== undefined && this.props.userpage.posts) {
 
       const pics = Object.entries(this.props.userpage.posts);
-      profileFeed =   <ul className="profile-feed"> {pics.map(post => {
+      profileFeed =   <ul className="profile-feed"> {pics.reverse().map(post => {
           return (<li className='SinglePost'>
             <img src={post[1].imageUrl}/>
             </li>);

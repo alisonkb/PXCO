@@ -26,7 +26,7 @@ const receiveUser = user => ({
   user
 });
 
-export const updateUser = user => dispatch => (
-  APIUserUtil.updateUser(user).then(user =>
+export const updateUser = (user, id) => dispatch => (
+  APIUserUtil.updateUser(user, id).then(user =>
   dispatch(receiveUser(user)))
 );
