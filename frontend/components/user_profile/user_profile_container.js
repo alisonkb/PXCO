@@ -7,11 +7,17 @@ import UserProfile from './user_profile';
 const mapStateToProps = (state, ownProps) => {
 
   let userId = parseInt(ownProps.location.pathname.slice(7));
-  return {
-    userpage: state.entities.users[userId],
-      currentUser: state.session.currentUser
-    // posts: state.entities.users[userId].posts
 
+      let posts;
+      if (state.entities.users[userId]) {
+        posts = state.entities.users[userId].posts;
+      } else {
+        posts = null;
+      }
+    return {
+      userpage: state.entities.users[userId],
+      currentUser: state.session.currentUser,
+      posts: posts
   };
 };
 

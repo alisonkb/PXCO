@@ -4,12 +4,10 @@ import { Link } from 'react-router-dom';
 
 class UserProfile extends React.Component {
 
-  componentDidMount() {
+  componentWillMount() {
     let userId = parseInt(this.props.location.pathname.slice(7));
     this.props.fetchUser(userId);
   }
-
-
 
 
   render () {
@@ -24,7 +22,7 @@ class UserProfile extends React.Component {
             <Link to={`/posts/${post[1].id}`}>
               <img src={post[1].imageUrl}/>
           </Link>
-        
+
             </li>);
         })}
       </ul>;
@@ -49,7 +47,7 @@ class UserProfile extends React.Component {
         <img className="profile-avatar"src={this.props.userpage.image_url} />
         <h1 className="profile-username"> {this.props.userpage.username}</h1>
         <h2 className="profile-bio"> {this.props.userpage.description} </h2>
-      {editPage}
+        {editPage}
         {profileFeed}
 
 

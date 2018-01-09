@@ -25,11 +25,11 @@ class Api::PostsController < ApplicationController
   # end
 
   def like
-
+    @like 
   end
 
   def unlike
-    
+
   end
 
   private

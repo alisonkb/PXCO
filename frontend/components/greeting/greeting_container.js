@@ -6,13 +6,11 @@ import Greeting from './greeting';
 const mapStateToProps = ({ session, entities }) => {
   let userid;
   if (session.currentUser) {
-    debugger
     userid = session.currentUser.id
     return {
       currentUser: entities.users[userid]
     };
   } else {
-    debugger
     return {
       currentUser: null
     }
