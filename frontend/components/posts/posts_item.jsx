@@ -1,10 +1,12 @@
 import React from 'react';
 import { Redirect } from 'react-router';
+import LikeButton from './like_button';
 
 class PostsItem extends React.Component {
 
   constructor (props) {
     super(props);
+    this.handleLike = this.handleLike.bind(this);
   }
 
   componentWillMount() {
@@ -13,6 +15,10 @@ class PostsItem extends React.Component {
 
   componenetDidMount() {
     this.props.fetchUser(this.props.post.user_id);
+  }
+
+  handleLike() {
+    this.props.likePost(this.props.post.id);
   }
 
 
@@ -33,7 +39,8 @@ class PostsItem extends React.Component {
             <h1>{this.props.user.username}</h1>
           </a>
           {captionDiv}
-
+          <LikeButton
+          photoId={this.props.post.id}/>
         </div>
       );
     } else {

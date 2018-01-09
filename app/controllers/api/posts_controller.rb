@@ -25,13 +25,15 @@ class Api::PostsController < ApplicationController
   # end
 
   def like
-    @like = Like.create(user_id: current_user.id, post_id: Post.find(params[:id]))
+    @like = Like.create(user_id: current_user.id, post_id: Post.find(params[:id]).id)
+    render json: {post_id: @like.post_id}
   end
 
   def unlike
-    @like = Like.find(user_id: current_user.id, post_id: Post.find(params[:id]))
+    @like = Like.find_by(user_id: current_user.id, post_id: Post.find(params[:id]))
     @like.destroy!
-    
+    render json: {post_id: @like.post_id}
+
   end
 
   private
