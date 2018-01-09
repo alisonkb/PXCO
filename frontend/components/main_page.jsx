@@ -14,8 +14,9 @@ const MainPage = () => {
       <section className='HomeLeft'>
           <div className='SectionTwo'>
             <a href='/#/feed'>
-            <img src="https://s3.amazonaws.com/pxco-dev/users/images/000/000/021/original/plushover2.png"/>
+            <div className='hoverSTwo'></div>
             </a>
+
           </div>
           <div className='SectionThree'>
             <a href='/#/users/6'>

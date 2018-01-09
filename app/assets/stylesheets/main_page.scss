@@ -59,16 +59,35 @@
 
 }
 
-.SectionTwo img {
+
+.SectionTwo a {
+  background-image: url("https://s3.amazonaws.com/pxco-dev/users/images/000/000/021/original/plushover2.png");
+  background-size: cover;
+  object-fit: cover;
+  background-position: center;
+  overflow: hidden;
+  // top: 0%;
+  left: 100%;
+  height: 100%;
   width: 100%;
-  opacity: 0;
+  display:flex;
+  // align-items:center;
+  // justify-content:center;
+  opacity: 0
 }
 
-.SectionTwo img:hover {
-  width: 100%;
+.SectionTwo a:hover {
+  background-image: url("https://s3.amazonaws.com/pxco-dev/users/images/000/000/021/original/plushover2.png");
+  background-size: cover;
+  object-fit: cover;
+  background-size: 100%;
+  background-position: center;
+   // top: 0%;
+   left: 50%;
+   height: 100%;
+   overflow: hidden;
   opacity: 1;
 }
-
 
 
 .SectionThree {
@@ -99,8 +118,8 @@
   background-image: url("https://s3.amazonaws.com/pxco-dev/users/images/000/000/021/original/lines-hover.png");
   background-size: cover;
   object-fit: cover;
-  background-size: 100%;
-  background-position: center;
+  // background-size: 100%;
+  // background-position: center;
   top: 50%;
   left: 50%;
   height: 100%;
