@@ -4,15 +4,16 @@ import { logout } from '../../actions/sessions_actions';
 import Greeting from './greeting';
 
 const mapStateToProps = ({ session, entities }) => {
-  let userid;
+  let userNow;
+
   if (session.currentUser) {
-    userid = session.currentUser.id
+    userNow = entities.users[session.currentUser.id]
     return {
-      currentUser: entities.users[userid]
+      currentUser_A: userNow
     };
   } else {
     return {
-      currentUser: null
+      currentUser_A: null
     }
   }
 };

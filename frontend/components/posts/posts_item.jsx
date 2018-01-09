@@ -35,12 +35,16 @@ class PostsItem extends React.Component {
       return (
         <div className='ImageView'>
           <img src={this.props.post.imageUrl}/>
-          <a href={`/#/users/${this.props.user.id}`}>
-            <h1>{this.props.user.username}</h1>
-          </a>
-          {captionDiv}
-          <LikeButton
-          photoId={this.props.post.id}/>
+          <div className='ImageView-text'>
+            <a href={`/#/users/${this.props.user.id}`}>
+              <h1>{this.props.user.username}</h1>
+            </a>
+            {captionDiv}
+
+              <LikeButton
+              photoId={this.props.post.id}/>
+            
+          </div>
         </div>
       );
     } else {

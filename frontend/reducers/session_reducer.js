@@ -20,7 +20,7 @@ const sessionReducer = (state = {currentUser: null}, action) => {
       const noLikes = state.currentUser.liked_id.slice();
       const badIndex = noLikes.indexOf(action.like.post_id);
       delete(noLikes[badIndex]);
-      return Object.assign({}, state, { currentUser: { liked_id: noLikes }});
+      return Object.assign({}, state, {  liked_id: noLikes });
     default:
       return state;
   }
