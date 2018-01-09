@@ -1,0 +1,16 @@
+.ImageView {
+  font-family: helvetica;
+  font-weight: normal;
+  color: dark-gray;
+  margin: auto;
+
+  font-size: 14px;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - 5.25rem)
+}
+
+.ImageView img {
+  height: 80%
+}

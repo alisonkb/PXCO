@@ -21,7 +21,10 @@ class UserProfile extends React.Component {
       const pics = Object.entries(this.props.userpage.posts);
       profileFeed =   <ul className="profile-feed"> {pics.reverse().map(post => {
           return (<li className='SinglePost'>
-            <img src={post[1].imageUrl}/>
+            <Link to={`/posts/${post[1].id}`}>
+              <img src={post[1].imageUrl}/>
+          </Link>
+        
             </li>);
         })}
       </ul>;

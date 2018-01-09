@@ -6,7 +6,7 @@ import PostsItem from './posts_item';
 
 const mapStateToProps = (state, ownProps) => {
   let postId = parseInt(ownProps.match.params.id);
-  debugger
+  
   let user;
   // let weirdUser = state.entities.users[state.entities.posts[postId].user_id];
   if (state.entities.posts[postId]) {

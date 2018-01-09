@@ -1,43 +1,45 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import { Route, Redirect } from 'react-router'
+import { Link, withRouter } from 'react-router-dom';
 
-
-const strangerGreeting = () => (
-  <div className='greeting-links'>
-    <div className='left-side'>
-      <Link to='/'><h1> PXCO </h1></Link>
+  const strangerGreeting = () => (
+    <div className='greeting-links'>
+      <div className='left-side'>
+        <Link to='/'><h1> PXCO </h1></Link>
       <Link to='/feed'><h1> Explore </h1></Link>
-    </div>
-    <div className="right-side">
-
-      <Link to='/login'>Log In</Link>
-      <Link className="signup" to='/signup'>Sign Up</Link>
-    </div>
-
-
   </div>
+  <div className="right-side">
+    <Link to='/login'>Log In</Link>
+  <Link className="signup" to='/signup'>Sign Up</Link>
+</div>
+</div>
 );
 
-
-
-const userGreeting = (currentUser, logout) => (
-
-  <div className='greeting-links'>
-        <div className='left-side'>
+  const userGreeting = (currentUser, logout, history) => (
+    <div className='greeting-links'>
+      <div className='left-side'>
         <Link to='/'><h1> PXCO </h1></Link>
       <Link to='/feed'><h1> Explore </h1></Link>
     </div>
     <div className="right-side-in">
       <Link className='username-link' to={`/users/${currentUser.id}`}><h1> {currentUser.username} </h1></Link>
     <Link className='username-link' to="/upload"><h1>Upload</h1></Link>
-  <button className='logout-button' onClick={logout}><a href='/'>Log Out</a></button>
+  <button className='logout-button' onClick={specialLogout(logout, history)}>Log Out</button>
     </div>
-  </div>
-);
+    </div>
+  );
 
-const Greeting = ({currentUser, logout}) => (
-  currentUser ? userGreeting(currentUser, logout) : strangerGreeting()
-);
+  const specialLogout = (logout, history) => {
+    return () => {
+      logout().then(() => {
+        history.push('/')
+      });
+    }
+  }
 
-export default Greeting;
+
+  const Greeting = ({currentUser, logout, history}) => (
+    currentUser ? userGreeting(currentUser, logout, history) : strangerGreeting()
+  );
+
+
+export default withRouter(Greeting);

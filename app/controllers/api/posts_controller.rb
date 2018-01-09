@@ -24,6 +24,14 @@ class Api::PostsController < ApplicationController
   # def edit
   # end
 
+  def like
+
+  end
+
+  def unlike
+    
+  end
+
   private
 
   def post_params
