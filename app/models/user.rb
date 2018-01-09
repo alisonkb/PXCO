@@ -26,7 +26,7 @@
   has_many :posts
   has_many :liked_posts, through: :likes, source: :posts
 
-  has_attached_file :image, default_url: "logo.jpg"
+  has_attached_file :image, default_url: "https://s3.amazonaws.com/pxco-dev/logo.jpg"
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
 
   attr_reader :password
