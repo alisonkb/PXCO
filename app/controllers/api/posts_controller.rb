@@ -25,11 +25,13 @@ class Api::PostsController < ApplicationController
   # end
 
   def like
-    @like 
+    @like = Like.create(user_id: current_user.id, post_id: Post.find(params[:id]))
   end
 
   def unlike
-
+    @like = Like.find(user_id: current_user.id, post_id: Post.find(params[:id]))
+    @like.destroy!
+    
   end
 
   private
