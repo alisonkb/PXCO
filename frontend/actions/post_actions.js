@@ -26,17 +26,17 @@ export const createPost = post => dispatch => (
   })
 );
 
-export const likePost = (postId) => (
-  APIPostUtil.likePost(postId).then(like => {
-    dispatch(receiveLike(like));
-  })
-);
-
-export const unlikePost = (postId) => (
-  APIPostUtil.unlikePost(postId).then(like => {
-    dispatch(removeLike(like))
-  })
-);
+// export const likePost = (postId) => (
+//   APIPostUtil.likePost(postId).then(like => {
+//     dispatch(receiveLike(like));
+//   })
+// );
+//
+// export const unlikePost = (postId) => (
+//   APIPostUtil.unlikePost(postId).then(like => {
+//     dispatch(removeLike(like))
+//   })
+// );
 
 const receiveAllPosts = ({posts, users}) => ({
   type: RECEIVE_ALL_POSTS,
@@ -50,12 +50,12 @@ const receivePost = post => ({
 });
 
 
-const receiveLike = like => ({
-  type: RECEIVE_LIKE,
-  like
-});
-
-const removeLike = like => ({
-  type: REMOVE_LIKE,
-  like
-});
+// const receiveLike = like => ({
+//   type: RECEIVE_LIKE,
+//   like
+// });
+//
+// const removeLike = like => ({
+//   type: REMOVE_LIKE,
+//   like
+// });

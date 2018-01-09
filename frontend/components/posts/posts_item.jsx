@@ -16,20 +16,28 @@ class PostsItem extends React.Component {
   }
 
 
-
   render () {
+
+
     if (this.props.post && this.props.user) {
+      let captionDiv;
+      if (!this.props.post.caption) {
+        captionDiv  = <div></div>;
+        } else {
+        captionDiv = <p>{this.props.post.caption}</p>;
+        }
       return (
         <div className='ImageView'>
           <img src={this.props.post.imageUrl}/>
-        <a href={`/#/users/${this.props.user.id}`}>
+          <a href={`/#/users/${this.props.user.id}`}>
             <h1>{this.props.user.username}</h1>
           </a>
+          {captionDiv}
 
         </div>
       );
     } else {
-      return <div></div>;
+      return <div className='error'></div>;
     }
   }
 }

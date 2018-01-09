@@ -5,7 +5,7 @@ class PostForm extends React.Component{
   constructor(props) {
     super(props);
     this.state = {
-      caption: null,
+      caption: '',
       user_id: this.props.currentUser.id,
       imageFile: null,
       imageUrl: ""
@@ -41,8 +41,9 @@ class PostForm extends React.Component{
 
     const file = this.state.imageFile;
     const formData = new FormData();
-
-    formData.append("post[caption]", this.state.caption);
+    if (this.state.caption.legnth > 0) {
+      formData.append("post[caption]", this.state.caption);
+    }
     formData.append("post[picture]", file);
 
 

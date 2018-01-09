@@ -13,9 +13,7 @@ class UserProfile extends React.Component {
   render () {
 
     let profileFeed;
-    // let numposts = this.props.userpage.posts.keys;
     if (this.props.userpage !== undefined && this.props.userpage.posts) {
-
       const pics = Object.entries(this.props.userpage.posts);
       profileFeed =   <ul className="profile-feed"> {pics.reverse().map(post => {
           return (<li className='SinglePost'>
@@ -49,11 +47,8 @@ class UserProfile extends React.Component {
         <h2 className="profile-bio"> {this.props.userpage.description} </h2>
         {editPage}
         {profileFeed}
+      </div>
 
-
-
-
-    </div>
     );
   } else {
     return <div></div>;

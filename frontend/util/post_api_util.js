@@ -23,16 +23,16 @@ export const fetchPost = id => {
   });
 };
 
-export const likePost = (postId) => {
-  return $.ajax({
-    url:`/api/posts/${postId}/like`,
-    type: 'POST'
-  });
-};
-
-export const unlikePost = (postId) => {
-  return $.ajax({
-    url: `/api/posts/${postId}/unlike`,
-    type: 'DELETE'
-  });
-};
+// export const likePost = (postId) => {
+//   return $.ajax({
+//     url:`/api/posts/${postId}/like`,
+//     type: 'POST'
+//   });
+// };
+//
+// export const unlikePost = (postId) => {
+//   return $.ajax({
+//     url: `/api/posts/${postId}/unlike`,
+//     type: 'DELETE'
+//   });
+// };
