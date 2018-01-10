@@ -7,9 +7,12 @@ const mapStateToProps = (state, ownProps) => {
   let likeStatus = false;
   let buttonText = 'Add to Collection';
   let postId = parseInt(ownProps.match.params.id);
+
   if (state.session.currentUser.liked_id.includes(postId)) {
     likeStatus = true;
     buttonText = 'Remove from Collection';
+  } else {
+    likeStatus = false;
   }
   return ({
     buttonText, likeStatus
@@ -24,7 +27,6 @@ const mapDispatchToProps = (dispatch, ownProps) =>{
 };
 
 const likeButton = (props) => {
-
   if (props.likeStatus) {
     return (
       <button className='ImageView-button' onClick={() => props.unlikePost(props.photoId)}>{props.buttonText}</button>

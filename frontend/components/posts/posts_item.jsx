@@ -13,6 +13,12 @@ class PostsItem extends React.Component {
     this.props.fetchPost(parseInt(this.props.match.params.id));
   }
 
+  componentWillReceiveProps(nextProps) {
+      if (parseInt(this.props.match.params.id) !== parseInt(nextProps.match.params.id)) {
+      this.props.fetchPost(parseInt(nextProps.match.params.id));
+    }
+  }
+
   componenetDidMount() {
     this.props.fetchUser(this.props.post.user_id);
   }
@@ -23,6 +29,15 @@ class PostsItem extends React.Component {
 
 
   render () {
+    debugger
+    let likeButtonRender;
+    if (this.props.post && this.props.currentUser ) {
+
+      likeButtonRender = <LikeButton
+      photoId={this.props.post.id}/> ;
+    } else {
+      likeButtonRender = <div></div> ;
+    }
 
 
     if (this.props.post && this.props.user) {
@@ -40,10 +55,8 @@ class PostsItem extends React.Component {
               <h1>{this.props.user.username}</h1>
             </a>
             {captionDiv}
+            {likeButtonRender}
 
-              <LikeButton
-              photoId={this.props.post.id}/>
-            
           </div>
         </div>
       );

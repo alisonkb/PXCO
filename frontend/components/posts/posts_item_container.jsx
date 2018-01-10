@@ -12,10 +12,21 @@ const mapStateToProps = (state, ownProps) => {
   } else {
     user = null;
   }
+
+  let userNow;
+  let currentUser;
+  if (state.session.currentUser) {
+    userNow = state.entities.users[state.session.currentUser.id];
+      currentUser = userNow;
+  } else {
+      currentUser=  null;
+  }
+
   return {
     post: state.entities.posts[postId],
-    user: user
-    // likedStatu
+    user: user,
+    currentUser
+
   };
 };
 
