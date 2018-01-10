@@ -10,6 +10,7 @@ import PostForm from './post_form/post_form_container';
 import UserProfileContainer from './user_profile/user_profile_container';
 import UserEditContainer from './user_edit/user_edit_container';
 import PostsItemContainer from './posts/posts_item_container';
+import UserLikesContainer from './user_likes/user_likes_container';
 
 const App = () => (
   <div>
@@ -21,6 +22,7 @@ const App = () => (
       <ProtectedRoute path='/upload' component={PostForm} />
       <Route path='/posts/:id' component={PostsItemContainer} />
       <ProtectedRoute path='/users/:id/edit' component={UserEditContainer} />
+      <Route path='/users/:id/likes' component={UserLikesContainer} />
       <Route path='/users/:id' component={UserProfileContainer} />
       <Route path='/' component={MainPage} />
     </Switch>

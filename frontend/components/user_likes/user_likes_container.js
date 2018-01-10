@@ -1,25 +1,23 @@
 import { connect } from 'react-redux';
-
 import { fetchUser } from '../../actions/user_actions';
-
-import UserProfile from './user_profile';
+import UserLikes from './user_likes';
 
 const mapStateToProps = (state, ownProps) => {
 
   let userId = parseInt(ownProps.location.pathname.slice(7));
-  let posts = [];
+  let liked_posts = [];
   let userpage = state.entities.users[userId];
   if (userpage) {
-    userpage.post_ids.forEach(post_id => {
-      if (state.entities.posts[post_id]) {
-        posts.push(state.entities.posts[post_id]);
+    userpage.liked_id.forEach(liked => {
+      if (state.entities.posts[liked]) {
+        liked_posts.push(state.entities.posts[liked]);
       }
     });
   }
     return {
       userpage,
       currentUser: state.session.currentUser,
-      posts
+      liked_posts
   };
 };
 
@@ -30,5 +28,4 @@ const mapDispatchToProps = (dispatch, ownProps) => {
   };
 };
 
-
-export default connect(mapStateToProps, mapDispatchToProps)(UserProfile);
+export default connect(mapStateToProps, mapDispatchToProps)(UserLikes);

@@ -2,7 +2,7 @@ import React from 'react';
 import PostsIndexItem from '../posts/posts_index_item';
 import { Link } from 'react-router-dom';
 
-class UserProfile extends React.Component {
+class UserLikes extends React.Component {
 
   componentDidMount() {
     let userId = parseInt(this.props.location.pathname.slice(7));
@@ -15,13 +15,12 @@ class UserProfile extends React.Component {
     }
   }
 
-  render () {
-
-    let profileFeed;
-    if (this.props.posts.length > 0) {
-      profileFeed = (
+  render() {
+    let likeFeed;
+    if (this.props.liked_posts.length > 0) {
+      likeFeed = (
         <ul className="profile-feed">
-          {this.props.posts.reverse().map(post => {
+          {this.props.liked_posts.reverse().map(post => {
             return (
               <a href={`/#/posts/${post.id}`}>
                 <li className='SinglePost'>
@@ -33,7 +32,7 @@ class UserProfile extends React.Component {
         </ul>
         );
       } else  {
-        profileFeed = <p className='no-post'>This user has no posts.</p>;
+        likeFeed = <p className='no-post'>This user has nothing in their collection.</p>;
            }
 
     let editPage;
@@ -54,7 +53,7 @@ class UserProfile extends React.Component {
         <h1 className="profile-username"> {this.props.userpage.username}</h1>
         <h2 className="profile-bio"> {this.props.userpage.description} </h2>
         {editPage}
-        {profileFeed}
+        {likeFeed}
       </div>
 
     );
@@ -63,6 +62,7 @@ class UserProfile extends React.Component {
   }
   }
 
+
 }
 
-export default UserProfile;
+export default UserLikes;
