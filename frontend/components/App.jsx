@@ -11,6 +11,7 @@ import UserProfileContainer from './user_profile/user_profile_container';
 import UserEditContainer from './user_edit/user_edit_container';
 import PostsItemContainer from './posts/posts_item_container';
 import UserLikesContainer from './user_likes/user_likes_container';
+import FollowsContainer from './follows/follows_container';
 
 const App = () => (
   <div>
@@ -20,6 +21,7 @@ const App = () => (
       <AuthRoute path="/signup" component={SessionFormContainer} />
       <Route path='/feed' component={PostsIndex} />
       <ProtectedRoute path='/upload' component={PostForm} />
+      <Route path='/follows' component={FollowsContainer} />
       <Route path='/posts/:id' component={PostsItemContainer} />
       <ProtectedRoute path='/users/:id/edit' component={UserEditContainer} />
       <Route path='/users/:id/likes' component={UserLikesContainer} />
