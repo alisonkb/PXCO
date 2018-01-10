@@ -7,17 +7,21 @@ import UserProfile from './user_profile';
 const mapStateToProps = (state, ownProps) => {
 
   let userId = parseInt(ownProps.location.pathname.slice(7));
-
-      let posts;
-      if (state.entities.users[userId]) {
-        posts = state.entities.users[userId].posts;
-      } else {
-        posts = null;
+  let posts = [];
+  let userpage = state.entities.users[userId];
+  if (userpage) {
+    userpage.post_ids.forEach(post_id => {
+      if (state.entities.posts[post_id]) {
+        posts.push(state.entities.posts[post_id]);
       }
+    });
+  }
+
     return {
-      userpage: state.entities.users[userId],
+      userpage,
       currentUser: state.session.currentUser,
-      posts: posts
+      posts
+
   };
 };
 

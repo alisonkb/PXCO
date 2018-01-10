@@ -4,29 +4,37 @@ import { Link } from 'react-router-dom';
 
 class UserProfile extends React.Component {
 
-  componentWillMount() {
+  componentDidlMount() {
     let userId = parseInt(this.props.location.pathname.slice(7));
     this.props.fetchUser(userId);
   }
 
+  componentWillReceiveProps(nextProps) {
+    
+  if (parseInt(this.props.match.params.id) !== parseInt(nextProps.match.params.id)) {
+    this.props.fetchUser(parseInt(nextProps.match.params.id))
+  }
+
+  }
 
   render () {
 
     let profileFeed;
-    if (this.props.userpage !== undefined && this.props.userpage.posts) {
-      const pics = Object.entries(this.props.userpage.posts);
-      profileFeed =   <ul className="profile-feed"> {pics.reverse().map(post => {
-          return (<li className='SinglePost'>
-            <Link to={`/posts/${post[1].id}`}>
-              <img src={post[1].imageUrl}/>
-          </Link>
-
-            </li>);
-        })}
-      </ul>;
-    } else  {
-      profileFeed = <p className='no-post'>This user has no posts.</p>;
-    }
+    if (this.props.posts.length > 0) {
+      profileFeed = (
+        <ul className="profile-feed">
+          {this.props.posts.map(post => {
+            return (
+              <li className='SinglePost'>
+                <img src ={post.imageUrl}/>
+              </li>
+            );
+          })}
+        </ul>
+        );
+      } else  {
+        profileFeed = <p className='no-post'>This user has no posts.</p>;
+           }
 
     let editPage;
     if (this.props.userpage && this.props.currentUser) {

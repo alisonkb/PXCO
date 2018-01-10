@@ -17,14 +17,17 @@ const receiveAllUsers = users => {
 };
 
 export const fetchUser = id => dispatch => (
-  APIUserUtil.fetchUser(id).then(user =>
-  dispatch(receiveUser(user)))
+  APIUserUtil.fetchUser(id).then(payload =>
+  dispatch(receiveUser(payload)))
 );
 
-const receiveUser = user => ({
+const receiveUser = ({user, posts}) => {
+  debugger
+  return {
   type: RECEIVE_USER,
-  user
-});
+  user,
+  posts}
+};
 
 export const updateUser = (user, id) => dispatch => (
   APIUserUtil.updateUser(user, id).then(user =>

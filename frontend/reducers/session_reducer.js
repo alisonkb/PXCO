@@ -17,10 +17,15 @@ const sessionReducer = (state = {currentUser: null}, action) => {
 
       return newState;
     case REMOVE_LIKE:
-      const noLikes = state.currentUser.liked_id.slice();
+      let noLikes = state.currentUser.liked_id.slice();
       const badIndex = noLikes.indexOf(action.like.post_id);
-      delete(noLikes[badIndex]);
-      return Object.assign({}, state, {  liked_id: noLikes });
+      noLikes.splice(badIndex, 1);
+
+      let newCurrentUser = merge({}, state.currentUser);
+      newCurrentUser.liked_id = noLikes;
+      return { currentUser: newCurrentUser };
+
+      // return Object.assign({}, state, { currentUser: { liked_id: noLikes }});
     default:
       return state;
   }
