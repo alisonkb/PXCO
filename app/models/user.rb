@@ -27,6 +27,12 @@
   has_many :likes
   has_many :liked_posts, through: :likes, source: :post
 
+  has_many :follows, foreign_key: :following_id, class_name: 'Follow'
+  has_many :followed_users, through: :follows, source: :follower
+
+  has_many :followings, class_name: 'Follow', foreign_key: :follower_id
+  has_many :following_users, through: :followings, source: :following
+
   has_attached_file :image, default_url: "https://s3.amazonaws.com/pxco-dev/logo.jpg"
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
 

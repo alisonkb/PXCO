@@ -1,6 +1,10 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
 
+const Greeting = ({currentUser_A, logout, history}) => {
+  return currentUser_A ? userGreeting(currentUser_A, logout, history) : strangerGreeting()
+};
+
   const strangerGreeting = () => (
     <div className='greeting-links'>
       <div className='left-side'>
@@ -37,9 +41,6 @@ import { Link, withRouter } from 'react-router-dom';
   }
 
 
-  const Greeting = ({currentUser_A, logout, history}) => {
-    return currentUser_A ? userGreeting(currentUser_A, logout, history) : strangerGreeting()
-  };
 
 
 export default withRouter(Greeting);

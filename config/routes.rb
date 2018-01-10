@@ -10,7 +10,8 @@ Rails.application.routes.draw do
         resources :posts, only: [:index, :create, :show]
         post "posts/:id/like", to: "posts#like"
         delete "posts/:id/unlike", to: "posts#unlike"
-
+        post "users/:id/follow", to: 'users#follow'
+        delete "users/:id/unfollow", to: 'users#unfollow'
 
       end
 

@@ -10,7 +10,7 @@ export const fetchUser = id => {
 
     url: `/api/users/${id}`,
     method: 'GET'
-  });
+  }); 
 };
 
 export const updateUser = (user, id) => {
@@ -21,5 +21,19 @@ export const updateUser = (user, id) => {
     data: user ,
     processData: false,
     contentType: false,
+  });
+};
+
+export const followUser = (userId) => {
+  return $.ajax({
+    url: `/api/users/${userId}/follow`,
+    method: 'POST'
+  });
+};
+
+export const unfollowUser = (userId) => {
+  return $.ajax({
+    url: `/api/users/${userId}/unfollow`,
+    method: 'POST'
   });
 };

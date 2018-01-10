@@ -28,6 +28,17 @@ class Api::UsersController < ApplicationController
     end
   end
 
+  def follow
+    @follow = Follow.create(follower_id: current_user.id, following_id: User.find(params[:id]).id)
+    render json: {following_id: @follow.following_id}
+  end
+
+  def unfollow
+    @follow = Follow.find_by(follower_id: current_user.id, following_id: User.find(params[:id]))
+    @follow.destroy!
+    render json: {following_id: @follow.following_id}
+  end
+
 
   private
   def user_params
