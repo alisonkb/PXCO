@@ -27,6 +27,7 @@ const Greeting = ({currentUser_A, logout, history}) => {
       <div className="right-side-in">
         <Link className='username-link' to={`/users/${currentUser_A.id}`}><h1> {currentUser_A.username} </h1></Link>
         <Link className='username-link' to="/upload"><h1>Upload</h1></Link>
+      <Link className='username-link' to="/follows"><h1>Feed</h1></Link>
         <button className='logout-button' onClick={specialLogout(logout, history)}>Log Out</button>
       </div>
     </div>
