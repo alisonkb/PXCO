@@ -41,11 +41,9 @@ class PostForm extends React.Component{
 
     const file = this.state.imageFile;
     const formData = new FormData();
-    if (this.state.caption.legnth > 0) {
-      formData.append("post[caption]", this.state.caption);
-    }
-    formData.append("post[picture]", file);
 
+    formData.append("post[picture]", file);
+    formData.append("post[caption]", this.state.caption);
 
     ApiUtil.createPost(formData).then(() => this.props.history.push('/feed'));
   }
