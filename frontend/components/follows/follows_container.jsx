@@ -5,6 +5,7 @@ import { fetchUsers } from '../../actions/user_actions';
 import Follows from './follows';
 
 const mapStateToProps = (state, ownProps) => {
+
   let followPosts = [];
   let followCheck = [];
   state.session.currentUser.followed_id.map(id => {
@@ -22,9 +23,10 @@ const mapStateToProps = (state, ownProps) => {
         }
       });
     }
-  
+
   return {
-    followPosts
+    followPosts,
+    users: state.entities.users
   };
 
 
