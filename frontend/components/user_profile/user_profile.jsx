@@ -54,6 +54,9 @@ class UserProfile extends React.Component {
         <h1 className="profile-username"> {this.props.userpage.username}</h1>
         <h2 className="profile-bio"> {this.props.userpage.description} </h2>
         {editPage}
+        <div className="profile-links">
+          Images<Link className='p-links-select' to={`/users/${this.props.userpage.id}/likes`}>Collection</Link>
+        </div>
         {profileFeed}
       </div>
 

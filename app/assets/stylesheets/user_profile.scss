@@ -6,7 +6,7 @@
 }
 
 .profile-username {
-  font-size: 14px;
+  font-size: 16px;
   font-family: helvetica;
   font-weight: normal;
   color: dark-gray;
@@ -27,7 +27,7 @@
     font-family: helvetica;
     font-weight: normal;
     color: dark-gray;
-    padding: 80px;
+    padding: 50px;
 }
 
 .profile-feed {}
@@ -55,4 +55,27 @@
   text-align: center;
   width: 200px;
   justify-content: center;
+}
+
+.profile-links  {
+  display: flex;
+  font-size: 14px;
+  font-family: helvetica;
+  font-weight: bold;
+  color: dark-gray;
+  padding: 60px 30px;
+  width: 200px;
+  margin:auto;
+  justify-content: space-between;
+
+
+}
+
+.p-links-select {
+  font-size: 14px;
+  font-family: helvetica;
+  font-weight: normal;
+  color: gray;
+
+
 }
