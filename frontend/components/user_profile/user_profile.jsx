@@ -10,9 +10,9 @@ class UserProfile extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    
+
   if (parseInt(this.props.match.params.id) !== parseInt(nextProps.match.params.id)) {
-    this.props.fetchUser(parseInt(nextProps.match.params.id))
+    this.props.fetchUser(parseInt(nextProps.match.params.id));
   }
 
   }
@@ -23,11 +23,13 @@ class UserProfile extends React.Component {
     if (this.props.posts.length > 0) {
       profileFeed = (
         <ul className="profile-feed">
-          {this.props.posts.map(post => {
+          {this.props.posts.reverse().map(post => {
             return (
-              <li className='SinglePost'>
-                <img src ={post.imageUrl}/>
-              </li>
+              <a href={`/#/posts/${post.id}`}>
+                <li className='SinglePost'>
+                  <img src ={post.imageUrl}/>
+                </li>
+              </a>
             );
           })}
         </ul>
