@@ -19,9 +19,9 @@ const App = () => (
     <Switch>
       <AuthRoute path="/login" component={SessionFormContainer} />
       <AuthRoute path="/signup" component={SessionFormContainer} />
-      <Route path='/feed' component={PostsIndex} />
+      <Route path='/explore' component={PostsIndex} />
       <ProtectedRoute path='/upload' component={PostForm} />
-      <Route path='/follows' component={FollowsContainer} />
+    <Route path='/feed' component={FollowsContainer} />
       <Route path='/posts/:id' component={PostsItemContainer} />
       <ProtectedRoute path='/users/:id/edit' component={UserEditContainer} />
       <Route path='/users/:id/likes' component={UserLikesContainer} />

@@ -13,7 +13,7 @@ const MainPage = () => {
 
       <section className='HomeLeft'>
           <div className='SectionTwo'>
-            <a href='/#/feed'>
+            <a href='/#/explore'>
             <div className='hoverSTwo'></div>
             </a>
 

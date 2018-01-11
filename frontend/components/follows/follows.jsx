@@ -32,7 +32,12 @@ class Follows extends React.Component {
           </ul>
         </div>;
     } else {
-      hasFollows =  <div className='error'></div>;
+      hasFollows =  <div className='error'>
+         <h3 className='no-post-head'>There's nothing here.</h3>
+       <a href ={`/#/explore`}>
+          <p className='no-post'>Check out the explore page to find users to follow!</p>
+        </a>
+      </div>;
     }
 
   return (
