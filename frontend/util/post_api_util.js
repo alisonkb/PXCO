@@ -23,8 +23,15 @@ export const fetchPost = id => {
   });
 };
 
-export const likePost = postId => {
+export const updatePost = (post, id) => {
+  return $.ajax({
+    method: 'PATCH',
+    url: `/api/posts/${id}`,
+    data: post
+  });
+};
 
+export const likePost = postId => {
   return $.ajax({
     url:`/api/posts/${postId}/like`,
     method: 'POST'

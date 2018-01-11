@@ -12,16 +12,20 @@ class Api::PostsController < ApplicationController
       render json: @post.errors.full_messages, status: 422
     end
   end
-  #
-  # def destroy
-  # end
+
 
   def index
     @posts = Post.all.includes(:user)
   end
 
-  # def edit
-  # end
+  def update
+    @post = Post.find(params[:id])
+    if @post.update(post_params)
+      render :update
+    else
+      render json: @post.errors.full_messages, status: 422
+    end
+  end
 
   def like
     @like = Like.create(user_id: current_user.id, post_id: Post.find(params[:id]).id)

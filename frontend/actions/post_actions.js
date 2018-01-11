@@ -25,6 +25,13 @@ const removeLike = like => ({
   like
 });
 
+const receiveLike = like => {
+  return {
+    type: RECEIVE_LIKE,
+    like
+  }
+};
+
 export const fetchPosts = () => dispatch => (
   APIPostUtil.fetchPosts().then(payload => {
     dispatch(receiveAllPosts(payload));
@@ -39,19 +46,18 @@ export const fetchPost = id => dispatch => (
   })
 );
 
-const receiveLike = like => {
-  return {
-    type: RECEIVE_LIKE,
-    like
-  }
-};
-
 export const createPost = post => dispatch => (
   APIPostUtil.fetchPost(post).then(post => {
     dispatch(receivePost(post));
     return post;
   })
 );
+
+export const updatePost = (post, id) => dispatch => (
+  APIPostUtil.updatePost(post, id).then(post => {
+    return dispatch(receivePost(post));
+  })
+)
 
 export const likePost = (postId) => dispatch => {
   return APIPostUtil.likePost(postId).then(like => {

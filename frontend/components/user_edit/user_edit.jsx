@@ -8,7 +8,6 @@ class UserEdit extends React.Component {
       id: this.props.currentUser.id,
       username: this.props.currentUser.username,
       description: this.props.currentUser.description,
-      // original_avatar: this.props.currentUser.image_url,
       imageFile: null,
       imageUrl: ""
     };
@@ -54,6 +53,8 @@ class UserEdit extends React.Component {
     formData.append("user[image]", file || this.props.currentUser.image_url);
     formData.append("user[username]", this.state.username);
     formData.append("user[description]", this.state.description );
+
+    // const userNew = merge({}, this.props.currentUser, formData);
 
 
     this.props.updateUser(formData, this.state.id).then(() => this.props.history.push(`/users/${this.state.id}`));
@@ -116,9 +117,9 @@ class UserEdit extends React.Component {
         </form>
       </div>
     );
-  } else {
-    return badLink;
-  }
+    } else {
+      return badLink;
+    }
   } else {
     return badLink;
 

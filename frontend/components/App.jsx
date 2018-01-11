@@ -12,6 +12,7 @@ import UserEditContainer from './user_edit/user_edit_container';
 import PostsItemContainer from './posts/posts_item_container';
 import UserLikesContainer from './user_likes/user_likes_container';
 import FollowsContainer from './follows/follows_container';
+import PostEditContainer from './post_edit/post_edit_container';
 
 const App = () => (
   <div>
@@ -22,6 +23,7 @@ const App = () => (
       <Route path='/explore' component={PostsIndex} />
       <ProtectedRoute path='/upload' component={PostForm} />
       <ProtectedRoute path='/feed' component={FollowsContainer} />
+      <ProtectedRoute path='/posts/:id/edit' component={PostEditContainer} />
       <Route path='/posts/:id' component={PostsItemContainer} />
       <ProtectedRoute path='/users/:id/edit' component={UserEditContainer} />
       <Route path='/users/:id/likes' component={UserLikesContainer} />
