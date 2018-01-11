@@ -1,6 +1,7 @@
 import React from 'react';
 import PostsIndexItem from '../posts/posts_index_item';
 import { Link } from 'react-router-dom';
+import FollowButton from './follow_button.jsx';
 
 class UserProfile extends React.Component {
 
@@ -54,6 +55,7 @@ class UserProfile extends React.Component {
         <h1 className="profile-username"> {this.props.userpage.username}</h1>
         <h2 className="profile-bio"> {this.props.userpage.description} </h2>
         {editPage}
+        <FollowButton/>
         <div className="profile-links">
           Images<Link className='p-links-select' to={`/users/${this.props.userpage.id}/likes`}>Collection</Link>
         </div>
