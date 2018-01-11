@@ -33,7 +33,7 @@ class Api::UsersController < ApplicationController
     # debugger
     # @follow = Follow.create(follower_id: current_user.id, following_id: User.find(params[:id]).id)
     @follow = Follow.create(following_id: current_user.id, follower_id: User.find(params[:id]).id)
-    render json: {following_id: @follow.following_id}
+    render json: {follower_id: @follow.follower_id}
   end
 
   def unfollow

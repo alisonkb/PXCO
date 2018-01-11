@@ -5,6 +5,10 @@ import FollowButton from './follow_button.jsx';
 
 class UserProfile extends React.Component {
 
+  componentWillMount() {
+    this.props.fetchUser(parseInt(this.props.location.pathname.slice(7)));
+  }
+
   componentDidMount() {
     let userId = parseInt(this.props.location.pathname.slice(7));
     this.props.fetchUser(userId);
@@ -15,6 +19,8 @@ class UserProfile extends React.Component {
       this.props.fetchUser(parseInt(nextProps.match.params.id));
     }
   }
+
+
 
   render () {
 
@@ -47,6 +53,15 @@ class UserProfile extends React.Component {
       editPage = <div></div>;
     }
 
+    let followButtonRender;
+    if (this.props.currentUser && this.props.userpage) {
+      if (this.props.currentUser.id !== this.props.userpage.id) {
+        followButtonRender = <FollowButton followId={this.props.userpage.id}/>;
+      }
+    } else {
+      followButtonRender = <div></div>;
+    }
+
     if (this.props.userpage !== undefined ) {
     return (
 
@@ -55,7 +70,7 @@ class UserProfile extends React.Component {
         <h1 className="profile-username"> {this.props.userpage.username}</h1>
         <h2 className="profile-bio"> {this.props.userpage.description} </h2>
         {editPage}
-        <FollowButton/>
+        {followButtonRender}
         <div className="profile-links">
           Images<Link className='p-links-select' to={`/users/${this.props.userpage.id}/likes`}>Collection</Link>
         </div>

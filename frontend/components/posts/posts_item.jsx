@@ -29,7 +29,6 @@ class PostsItem extends React.Component {
 
 
   render () {
-    debugger
     let likeButtonRender;
     if (this.props.post && this.props.currentUser ) {
 

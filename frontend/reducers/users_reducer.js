@@ -2,7 +2,7 @@ import merge from 'lodash/merge';
 
 import { RECEIVE_ALL_USERS, RECEIVE_USER } from '../actions/user_actions';
 import { RECEIVE_ALL_POSTS, RECEIVE_POST } from '../actions/post_actions';
-import { RECEIVE_CURRENT_USER } from '../actions/sessions_actions.js';
+import { RECEIVE_CURRENT_USER, RECEIVE_FOLLOW, REMOVE_FOLLOW } from '../actions/sessions_actions.js';
 
 
 const usersReducer = (state = {}, action) => {
