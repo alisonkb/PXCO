@@ -1,0 +1,20 @@
+.empty-feed {
+  font-family: helvetica;
+  font-weight: normal;
+  color: dark-gray;
+  margin: auto;
+
+  font-size: 14px;
+  text-align: center;
+  justify-content: center;
+  height: calc(100vh - 5.25rem);
+  padding-top: 100px;
+}
+
+.no-post-head {
+  padding: 30px;
+}
+
+.no-post-head h3 {
+  font-weight: bold;
+}

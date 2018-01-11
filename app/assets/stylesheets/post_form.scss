@@ -8,8 +8,9 @@
   text-align: center;
   justify-content: center;
   height: calc(100vh - 5.25rem);
-    padding-top: 30px;
-    overflow: hidden;
+  min-height: 600px;
+  padding-top: 30px;
+  overflow: hidden;
 }
 
 .upload-title {

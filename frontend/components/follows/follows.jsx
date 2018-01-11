@@ -10,7 +10,7 @@ class Follows extends React.Component {
 
   render() {
     let hasFollows;
-    if (this.props.followPosts) {
+    if (this.props.followPosts.length > 0) {
       hasFollows =
       <div className='AllPosts'>
           <h2>Recent uploads from people you follow</h2>
@@ -21,7 +21,7 @@ class Follows extends React.Component {
                   <Link to={`/posts/${post.id}`}>
                     <img src={post.imageUrl}/>
                   </Link>
-                  <a href={`/#/users/${this.props.users[post.user_id]}`}>
+                  <a href={`/#/users/${this.props.users[post.user_id].id}`}>
                     <p>{this.props.users[post.user_id].username}</p>
                   </a>
                   </li>
@@ -32,11 +32,11 @@ class Follows extends React.Component {
           </ul>
         </div>;
     } else {
-      hasFollows =  <div className='error'>
+      hasFollows =  <div className='empty-feed'>
          <h3 className='no-post-head'>There's nothing here.</h3>
-       <a href ={`/#/explore`}>
-          <p className='no-post'>Check out the explore page to find users to follow!</p>
-        </a>
+
+       <p className='no-post-head'><a href ={`/#/explore`}>Check out the explore page to find users to follow!</a></p>
+
       </div>;
     }
 

@@ -8,7 +8,8 @@
   font-size: 14px;
   text-align: center;
   justify-content: center;
-  height: calc(100vh - 5.25rem)
+  height: calc(100vh - 5.25rem);
+  min-height: 700px;
 }
 
 .login-form {
