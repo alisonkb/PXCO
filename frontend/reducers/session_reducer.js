@@ -34,8 +34,7 @@ const sessionReducer = (state = {currentUser: null}, action) => {
       const badFollow = noFollows.indexOf(action.follow.follower_id);
       noFollows.splice(badFollow, 1);
       return newFollowState;
-    case RECEIVE_USER:
-      return merge({}, state, { currentUser: action.user});
+  
     default:
       return state;
   }
