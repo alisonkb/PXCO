@@ -2,7 +2,7 @@ import merge from 'lodash/merge';
 
 import { RECEIVE_CURRENT_USER } from '../actions/sessions_actions';
 import { RECEIVE_LIKE, REMOVE_LIKE } from '../actions/post_actions';
-import { RECEIVE_FOLLOW, REMOVE_FOLLOW } from '../actions/user_actions';
+import { RECEIVE_FOLLOW, REMOVE_FOLLOW, RECEIVE_USER } from '../actions/user_actions';
 
 const defaultState = {currentUser: null};
 
@@ -34,6 +34,8 @@ const sessionReducer = (state = {currentUser: null}, action) => {
       const badFollow = noFollows.indexOf(action.follow.follower_id);
       noFollows.splice(badFollow, 1);
       return newFollowState;
+    case RECEIVE_USER:
+      return merge({}, state, { currentUser: action.user});
     default:
       return state;
   }
