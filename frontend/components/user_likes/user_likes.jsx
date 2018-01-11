@@ -1,6 +1,7 @@
 import React from 'react';
 import PostsIndexItem from '../posts/posts_index_item';
 import { Link } from 'react-router-dom';
+import FollowButton from './follow_button';
 
 class UserLikes extends React.Component {
 
@@ -45,6 +46,15 @@ class UserLikes extends React.Component {
       editPage = <div></div>;
     }
 
+    let followButtonRender;
+    if (this.props.currentUser && this.props.userpage) {
+      if (this.props.currentUser.id !== this.props.userpage.id) {
+        followButtonRender = <FollowButton className='followbut' followId={this.props.userpage.id}/>;
+      }
+    } else {
+      followButtonRender = <div className='nofollow'></div>;
+    }
+
     if (this.props.userpage !== undefined ) {
     return (
 
@@ -53,6 +63,7 @@ class UserLikes extends React.Component {
         <h1 className="profile-username"> {this.props.userpage.username}</h1>
         <h2 className="profile-bio"> {this.props.userpage.description} </h2>
         {editPage}
+        {followButtonRender}
         <div className="profile-links">
           <Link className='p-links-select' to={`/users/${this.props.userpage.id}`}>Images</Link>Collection
         </div>

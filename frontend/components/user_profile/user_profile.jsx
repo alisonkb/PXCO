@@ -56,11 +56,10 @@ class UserProfile extends React.Component {
     let followButtonRender;
     if (this.props.currentUser && this.props.userpage) {
       if (this.props.currentUser.id !== this.props.userpage.id) {
-        followButtonRender = <FollowButton followId={this.props.userpage.id}/>;
+        followButtonRender = <FollowButton className='followbut' followId={this.props.userpage.id}/>;
       }
     } else {
-      debugger
-      followButtonRender = <div></div>;
+      followButtonRender = <div className='nofollow'></div>;
     }
 
     if (this.props.userpage !== undefined ) {
