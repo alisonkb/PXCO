@@ -4,7 +4,7 @@ import { withRouter } from 'react-router-dom';
 import { followUser, unfollowUser } from '../../actions/user_actions';
 
 const mapStateToProps = (state, ownProps ) => {
-
+  let followArr = state.session.currentUser.followed_id
   let followStatus = false;
   let buttonText = 'Follow';
   let userId = parseInt(ownProps.match.params.id);
@@ -31,11 +31,11 @@ const mapDispatchToProps = (dispatch, ownProps) => {
 const followButton = (props) => {
   if (props.followStatus) {
     return (
-      <button className='follow-button' onClick={() => props.unfollowUser(props.followId)}>{props.buttonText}</button>
+      <button className='edit-button-profile' onClick={() => props.unfollowUser(props.followId)}>{props.buttonText}</button>
     );
   } else {
     return (
-      <button className='follow-button' onClick={() => props.followUser(props.followId)}>{props.buttonText}</button>
+      <button className='edit-button-profile' onClick={() => props.followUser(props.followId)}>{props.buttonText}</button>
     );
   }
 };

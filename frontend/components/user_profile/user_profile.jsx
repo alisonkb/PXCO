@@ -59,6 +59,7 @@ class UserProfile extends React.Component {
         followButtonRender = <FollowButton followId={this.props.userpage.id}/>;
       }
     } else {
+      debugger
       followButtonRender = <div></div>;
     }
 

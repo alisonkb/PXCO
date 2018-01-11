@@ -26,15 +26,14 @@ const sessionReducer = (state = {currentUser: null}, action) => {
     case RECEIVE_FOLLOW:
       const newFollows = state.currentUser.followed_id.slice();
       newFollows.push(action.follow.follower_id);
-      return merge({}, state, { currentUser: { follower_id: newFollows }});
-      
+      return merge({}, state, { currentUser: { followed_id: newFollows }});
+
     case REMOVE_FOLLOW:
-      let noFollows = state.currentUser.followed_id.slice();
+      let newFollowState = Object.assign({}, state);
+      let noFollows = newFollowState.currentUser.followed_id;
       const badFollow = noFollows.indexOf(action.follow.follower_id);
       noFollows.splice(badFollow, 1);
-      let newFollowArr = merge({}, state.currentUser);
-      newFollowArr.followed_id = noFollows;
-      return merge({}, newFollowArr);
+      return newFollowState;
     default:
       return state;
   }
