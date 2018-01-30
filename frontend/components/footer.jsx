@@ -6,7 +6,7 @@ const Footer = () => {
       <img src ="https://s3.amazonaws.com/pxco-dev/posts/pictures/000/000/018/sheepiewhite.png" />
       <ul>
         <li>
-          Created by Alison Bushor, NYC.
+          <a href="http://www.alisonbushor.com/">Created by Alison Bushor, NYC.</a>
         </li>
         <li>
           <a href ="https://github.com/alisonkb">GitHub</a>
